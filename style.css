@@ -25,6 +25,7 @@ body {
   width: 90%;
 
   margin: 0 auto;
+  padding-top: 100px;
 }
 header {
   width: 100%;
@@ -39,11 +40,11 @@ header h1 {
   font-family: 'Ubuntu', sans-serif;
   padding-top: 20px;
   position: relative;
-  animation: moving 3s ease-in-out infinite alternate;
+  animation: moving 5s ease-in-out infinite alternate;
 }
 @keyframes moving {
   0% {
-    top: -70px;
+    top: -180px;
   }
   30% {
     color: #fff;
@@ -68,7 +69,7 @@ header h2 {
   display: block;
 
   height: 200px;
-  min-width: 800px;
+  /* min-width: 500px; */
   overflow: hidden;
   font-size: 0;
   background-color: #333;
@@ -163,13 +164,13 @@ header h2 {
   background-color: #205fd5;
 }
 
-.contact a::before,
-.contact a::after {
+.contact-accordion a::before,
+.contact-accordion a::after {
   font-family: 'Font Awesome 5 Free';
   font-weight: 800;
   content: '\f573';
 }
-.contact a::after {
+.contact-accordion a::after {
   background-color: #9a6ed8;
 }
 /* responsive landing page */
@@ -193,6 +194,7 @@ header h2 {
     font-size: 0;
     padding-bottom: 10px;
     background-color: rgba(14, 14, 14, 0.2);
+    margin-bottom: 0;
   }
   .items-accordion {
     display: block;
@@ -222,10 +224,21 @@ header h2 {
 @media screen and (max-width: 680px) {
   .container-header {
     width: 90%;
+    margin: 0 auto;
+    /* margin: 0 auto; */
   }
   .accordion-menu {
-    width: 100%;
+    width: 80%;
     background-color: rgba(14, 14, 14, 0.2);
+  }
+  /* .items-accordion .info-1 {
+    width: 100px;
+  } */
+  header h2 {
+    font-size: 1.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
   }
 }
 
@@ -236,7 +249,7 @@ header h2 {
   background-color: #111;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 .about-text {
   padding-left: 30px;
@@ -246,7 +259,7 @@ header h2 {
   color: #ff0000;
   border-bottom: 1px solid #ff0000;
   font-size: 2.5rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 .about-text h2:hover {
   transform: scale(1.1);
@@ -275,6 +288,9 @@ header h2 {
 @media screen and (max-width: 680px) {
   .about-container {
     flex-direction: column;
+  }
+  .container-header {
+    padding-top: 40px;
   }
   .about-text {
     padding-top: 30px;
@@ -328,6 +344,9 @@ header h2 {
 }
 .info-ex {
   text-align: center;
+}
+.info-ex p {
+  text-transform: lowercase;
 }
 .card-ex:hover {
   transform: scale(1.1);
@@ -570,7 +589,7 @@ header h2 {
   background: url(./images/contact.jpg) no-repeat center;
   background-size: cover;
   z-index: -1;
-  filter: blur(10px);
+  filter: blur(5px);
 }
 .contact-box {
   max-width: 850px;
@@ -579,7 +598,8 @@ header h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  background-color: #333;
+  opacity: 0.8;
   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
 }
 
@@ -600,7 +620,7 @@ header h2 {
   padding-bottom: 0.6rem;
   margin-bottom: 0.6rem;
   font-size: 2rem;
-  color: #9a6ed8;
+  color: #fff;
 }
 .right h2::after {
   content: '';
@@ -611,13 +631,14 @@ header h2 {
   height: 4px;
   width: 50px;
   border-radius: 3px;
-  background: #9a6ed8;
+  background: #fff;
 }
 .field {
   width: 100%;
   padding: 0.5rem 1rem;
   outline: none;
-  background-color: rgba(230, 230, 230, 0.6);
+  background-color: rgba(29, 26, 26, 0.6);
+  /* color: #fff; */
   font-size: 1.1rem;
   margin-bottom: 1rem;
   transition: 0.4s;
@@ -626,21 +647,26 @@ header h2 {
 .field:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+input {
+  color: #fff;
+}
 .area {
   min-height: 150px;
+  color: #fff;
 }
 .btn-contact {
   width: 100%;
   padding: 0.5rem 1rem;
-  background-color: #2ecc71;
+  background-color: #535c57;
   cursor: pointer;
   font-size: 1.1rem;
   border: none;
   color: #fff;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 .btn-contact:hover {
-  background-color: #27ae60;
+  background-color: #7b817e;
+  transform: translateY(5px);
 }
 
 @media screen and (max-width: 950px) {
@@ -680,6 +706,7 @@ footer p span {
 footer a:hover {
   color: #54cade;
   /* transform: rotateY(180deg); */
+  transform: scale(1.1);
 }
 .social-icon {
   display: flex;
